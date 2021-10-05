@@ -1,10 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\RoleController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\TodoController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\Customer;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,3 +52,9 @@ Route::resource('todo', TodoController::class);
 Route::get('gettoken', [ContactController::class, 'get_token'])->name('contacts.token');
 
 Route::resource('contacts', ContactController::class);
+
+Route::group(['middleware' => ['auth']], function() {
+    Route::resource('roles', RoleController::class);
+    Route::resource('users', UserController::class);
+    Route::resource('customer', CustomerController::class);
+});
