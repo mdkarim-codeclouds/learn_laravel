@@ -16,8 +16,8 @@ define('LARAVEL_START', microtime(true));
 |
 */
 
-if (file_exists(__DIR__.'/../crud_with_laravel_private/storage/framework/maintenance.php')) {
-    require __DIR__.'/../crud_with_laravel_private/storage/framework/maintenance.php';
+if (file_exists(__DIR__.'/../private/storage/framework/maintenance.php')) {
+    require __DIR__.'/../private/storage/framework/maintenance.php';
 }
 
 /*
@@ -31,7 +31,7 @@ if (file_exists(__DIR__.'/../crud_with_laravel_private/storage/framework/mainten
 |
 */
 
-require __DIR__.'/../crud_with_laravel_private/vendor/autoload.php';
+require __DIR__.'/../private/vendor/autoload.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -44,7 +44,7 @@ require __DIR__.'/../crud_with_laravel_private/vendor/autoload.php';
 |
 */
 
-$app = require_once __DIR__.'/../crud_with_laravel_private/bootstrap/app.php';
+$app = require_once __DIR__.'/../private/bootstrap/app.php';
 
 $kernel = $app->make(Kernel::class);
 

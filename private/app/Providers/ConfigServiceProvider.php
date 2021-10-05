@@ -14,7 +14,7 @@ class ConfigServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind('path.public', function(){
-            return realpath('../crud_with_laravel');
+            return realpath('../public');
         });
     }
 
