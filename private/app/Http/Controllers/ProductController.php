@@ -126,11 +126,23 @@ class ProductController extends Controller
         $thumbnail_image_filename = $request->input('old_thumbnail_image');
         $large_image_filename = $request->input('old_large_image');
         if($request->file('thumbnail_image')){
+            if($request->input('old_thumbnail_image')){
+                $old_image_path = public_path('uploads/products')."/".basename($request->input('old_thumbnail_image'));
+                if(@filemtime($old_image_path) > 0){
+                    unlink($old_image_path);
+                }
+            }
             $thumbnail_image_filename = basename($request->file('thumbnail_image')->getClientOriginalName()).'_'.time().'.'.$request->file('thumbnail_image')->extension();
             $request->file('thumbnail_image')->move(public_path('uploads/products'), $thumbnail_image_filename);
             $thumbnail_image_filename = url('uploads/products/'.$thumbnail_image_filename);
         }
         if($request->file('large_image')){
+            if($request->input('old_large_image')){
+                $old_image_path = public_path('uploads/products')."/".basename($request->input('old_large_image'));
+                if(@filemtime($old_image_path) > 0){
+                    unlink($old_image_path);
+                }
+            }
             $large_image_filename = basename($request->file('large_image')->getClientOriginalName()).'_'.time().'.'.$request->file('large_image')->extension();
             $request->file('large_image')->move(public_path('uploads/products'), $large_image_filename);
             $large_image_filename = url('uploads/products/'.$large_image_filename);
