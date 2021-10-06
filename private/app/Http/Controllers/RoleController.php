@@ -99,7 +99,18 @@ class RoleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required',
+            'permission' => 'required', 
+        ]);
+
+        $role = Role::find($id);
+        $role->name = $request->input('name');
+        $role->save();
+
+        $role->syncPermissions($request->input('permission'));
+
+        return redirect()->route('roles.index')->with('success', 'Role updated successfully');
     }
 
     /**
@@ -110,6 +121,7 @@ class RoleController extends Controller
      */
     public function destroy($id)
     {
-        //
+        DB::table("roles")->where('id', $id)->delete();
+        return redirect()->route('roles.index')->with('success', 'Role deleted successfully');
     }
 }
