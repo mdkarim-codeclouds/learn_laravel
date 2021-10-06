@@ -37,9 +37,13 @@
         <li class="nav-item <?= $current_route == "todo.index" ? "active" : "" ?>">
             <a class="nav-link" href="{{ route('todo.index') }}"><i class="fas fa-fw fa-list"></i><span>Todo List</span></a>
         </li>
-        <!-- Nav Item - Todo List -->
+        <!-- Nav Item - Users List -->
         <li class="nav-item <?= in_array($current_route, ['users.index','users.create','users.show','users.edit']) ? "active" : "" ?>">
             <a class="nav-link" href="{{ route('users.index') }}"><i class="fas fa-fw fa-users"></i><span>Users</span></a>
+        </li>
+        <!-- Nav Item - Roles List -->
+        <li class="nav-item <?= in_array($current_route, ['roles.index','roles.create','roles.show','roles.edit']) ? "active" : "" ?>">
+            <a class="nav-link" href="{{ route('roles.index') }}"><i class="fas fa-fw fa-list"></i><span>Roles</span></a>
         </li>
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block">
