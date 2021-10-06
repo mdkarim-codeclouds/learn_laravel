@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use Spatie\Permission\Model\Role;
+use Spatie\Permission\Models\Role;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Hash;
@@ -17,7 +17,7 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $data = User::orderBy('id', 'DESC')->paginate(5);
         return view('users.index', compact('data'))->with('i', ($request->input('page', 1) - 1) * 5);
@@ -51,7 +51,7 @@ class UserController extends Controller
 
         $input = $request->all();
         $input['password'] = Hash::make($input['password']);
-        $user = User::created($input);
+        $user = User::create($input);
         $user->assignRole($request->input('roles'));
         return redirect()->route('users.index')->with('success', 'User Created Successfully');
     }
