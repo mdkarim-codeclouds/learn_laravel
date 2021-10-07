@@ -41,7 +41,7 @@
                                         @foreach ($permission as $key => $value)
                                         <div class="custom-control custom-checkbox">
                                             <input type="checkbox" name="permission[]" class="custom-control-input" value="{{ $value->id }}" id="customCheck_{{ $value->id }}">
-                                            <label class="custom-control-label" for="customCheck_{{ $value->id }}">{{ $value->name }}</label>
+                                            <label class="custom-control-label" for="customCheck_{{ $value->id }}">{{ $value->name }} ({{ $value->guard_name }})</label>
                                         </div>
                                         @endforeach
                                         @error('permission')
