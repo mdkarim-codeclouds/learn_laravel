@@ -63,9 +63,9 @@
                                     <div class="mb-3">
                                         <label for="">Roles</label>
                                         @foreach ($roles as $key => $role)
-                                        <div class="custom-control custom-checkbox small">
-                                            <input type="checkbox" name="roles[]" class="custom-control-input" value="{{ $role->name }}" id="customCheck_{{ $role->name }}">
-                                            <label class="custom-control-label" for="customCheck_{{ $role->name }}">{{ $role->name }}</label>
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" name="roles[]" class="custom-control-input" value="{{ $role }}" id="customCheck_{{ $role }}">
+                                            <label class="custom-control-label" for="customCheck_{{ $role }}">{{ $role }}</label>
                                         </div>
                                         @endforeach
                                         @error('roles')

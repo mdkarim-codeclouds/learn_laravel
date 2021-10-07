@@ -33,7 +33,7 @@
                                 <tr>
                                     <td class="inner-table align-middle text-center">{{ $key+1 }}</td>
                                     <td class="inner-table align-middle text-left">{{ $user->name }}</td>
-                                    <td class="inner-table align-middle text-left">{{ $user->description }}</td>
+                                    <td class="inner-table align-middle text-left">{{ $user->email }}</td>
                                     <td class="inner-table align-middle text-center">
                                         @if(!empty($user->getRoleNames()))
                                             @foreach($user->getRoleNames() as $v)

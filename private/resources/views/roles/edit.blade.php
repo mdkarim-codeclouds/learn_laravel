@@ -39,8 +39,8 @@
                                     <hr class="sidebar-divider">
                                     <div class="mb-3">
                                         <label for="">Permission</label>
-                                        @foreach ($permission as $key => $role)
-                                        <div class="custom-control custom-checkbox small">
+                                        @foreach ($permission as $key => $value)
+                                        <div class="custom-control custom-checkbox">
                                             <input type="checkbox" name="permission[]" class="custom-control-input" value="{{ $value->id }}" id="customCheck_{{ $value->id }}" <?= in_array($value->id, $rolePermissions) ? 'checked' : '' ?>>
                                             <label class="custom-control-label" for="customCheck_{{ $value->id }}">{{ $value->name }}</label>
                                         </div>
