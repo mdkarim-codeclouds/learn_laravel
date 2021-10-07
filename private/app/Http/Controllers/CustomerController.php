@@ -26,8 +26,8 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        $customer = Customer::latest()->paginate(5);
-        return view('customers.index', compact('customer'))->with('i', (request()->input('page', 1) - 1) * 5);
+        $customers = Customer::latest()->paginate(5);
+        return view('customer.index', compact('customers'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -55,7 +55,7 @@ class CustomerController extends Controller
 
         Customer::create($request->all());
 
-        return redirect()->route('products.index')->with('success', 'Product Created Successfully');
+        return redirect()->route('customer.index')->with('success', 'Product Created Successfully');
     }
 
     /**

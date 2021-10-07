@@ -45,6 +45,10 @@
         <li class="nav-item <?= in_array($current_route, ['roles.index','roles.create','roles.show','roles.edit']) ? "active" : "" ?>">
             <a class="nav-link" href="{{ route('roles.index') }}"><i class="fas fa-fw fa-list"></i><span>Roles</span></a>
         </li>
+        <!-- Nav Item - Customer List -->
+        <li class="nav-item <?= in_array($current_route, ['customer.index','customer.create','customer.show','customer.edit']) ? "active" : "" ?>">
+            <a class="nav-link" href="{{ route('customer.index') }}"><i class="fas fa-fw fa-users"></i><span>Customers</span></a>
+        </li>
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block">
         <!-- Sidebar Toggler (Sidebar) -->
