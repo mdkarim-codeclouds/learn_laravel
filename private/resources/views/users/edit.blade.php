@@ -28,6 +28,7 @@
                             <div class="sbp-preview-content">
                                 <form method="POST" action="{{ route('users.update', ['user' => $user->id]) }}" enctype="multipart/form-data">
                                     @csrf
+                                    @method('PUT')
                                     <div class="mb-3">
                                         <label for="name">Name</label>
                                         <input class="form-control" id="name" type="text" name="name" placeholder="Enter Name" value="{{ $user->name }}">
