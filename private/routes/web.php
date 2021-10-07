@@ -9,6 +9,7 @@ use App\Http\Controllers\TodoController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -62,3 +63,5 @@ Route::group(['middleware' => ['auth']], function() {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::resource('students', StudentController::class);
