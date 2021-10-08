@@ -1,7 +1,7 @@
 <template>
     <div>
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <router-link :to="{ name: 'home' }" class="navbar-brand">Laravel-Vue SPA</router-link>
+            <router-link :to="{ name: 'home' }" class="navbar-brand">Laravel-Vue</router-link>
             <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -12,6 +12,9 @@
                     </li>
                     <li class="nav-item">
                         <router-link class="nav-link" data-toggle="collapse" :to="{ name: 'about' }">About</router-link>
+                    </li>
+                    <li class="nav-item">
+                        <router-link class="nav-link" data-toggle="collapse" :to="{ name: 'student-list' }">Student</router-link>
                     </li>
                 </ul>
             </div>

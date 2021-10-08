@@ -7,10 +7,6 @@ use Illuminate\Http\Request;
 
 class StudentController extends Controller
 {
-    function __construct()
-    {
-        $this->middleware('auth');
-    }
     /**
      * Display a listing of the resource.
      *
@@ -63,7 +59,10 @@ class StudentController extends Controller
      */
     public function show(Student $student)
     {
-        //
+        return response()->json([
+            'student' => $student,
+            'message' => 'success'
+        ], 200);
     }
 
     /**
