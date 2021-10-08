@@ -11,12 +11,12 @@ const router = new VueRouter({
     linkExactActiveClass: 'active',
     routes: [
         {
-            path: '/',
+            path: 'home',
             name: 'home',
             component: Home
         },
         {
-            path: '/about',
+            path: 'about',
             name: 'about',
             component: About
         }
