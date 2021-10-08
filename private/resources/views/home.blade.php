@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-<script src="{{ mix('js/app.js') }}"></script>
 <example-component></example-component>
 <div class="container">
     <div class="row justify-content-center">
