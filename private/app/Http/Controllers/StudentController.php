@@ -17,6 +17,7 @@ class StudentController extends Controller
         $students = Student::orderBy('created_at', 'ASC')->get();
         return response()->json([
             'students' => $students,
+            'message' => 'success'
         ], 200);
     }
 
