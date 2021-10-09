@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ApiLoginController;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\StudentController;
 use Illuminate\Http\Request;
@@ -23,3 +24,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::resource('tasks', TaskController::class);
 
 Route::resource('students', StudentController::class);
+
+Route::get('/login', [ApiLoginController::class, 'login']);
