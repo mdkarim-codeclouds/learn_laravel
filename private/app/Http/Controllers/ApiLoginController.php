@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 
 class ApiLoginController extends Controller
 {
+    public function __construct() {
+        $this->middleware('auth:api', ['except' => ['login']]);
+    }
     protected function sendResult($message, $data, $errors = [], $status = true) {
         $error_code = $status ? 200 : 422;
         $result = [
