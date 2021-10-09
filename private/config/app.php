@@ -181,6 +181,8 @@ return [
         Spatie\Permission\PermissionServiceProvider::class,
 
         Barryvdh\Debugbar\ServiceProvider::class,
+
+        Tymon\JWTAuth\Providers\LaravelServiceProvider::class,
     ],
 
     /*
@@ -237,6 +239,9 @@ return [
 
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'UserVerification' => Jrean\UserVerification\Facade\UserVerification::class,
+
+        'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
+        'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
     ],
 
 ];

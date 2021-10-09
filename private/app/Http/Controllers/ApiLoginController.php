@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contact;
 use Illuminate\Http\Request;
 
 class ApiLoginController extends Controller
@@ -38,5 +39,9 @@ class ApiLoginController extends Controller
             ];
         }
         return $this->sendResult($message, $data, $errors, $status);
+    }
+    public function getContacts()
+    {
+        return json_encode(Contact::all());
     }
 }
