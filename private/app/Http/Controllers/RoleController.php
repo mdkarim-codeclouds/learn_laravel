@@ -55,6 +55,7 @@ class RoleController extends Controller
         $this->validate($request, [
             'name' => 'required|unique:roles,name',
             'permission' => 'required',
+            'g-recaptcha-response' => 'required|captcha',
         ]);
 
         $role = Role::create(['name' => $request->input('name')]);

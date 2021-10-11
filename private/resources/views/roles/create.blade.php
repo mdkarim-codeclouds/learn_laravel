@@ -4,7 +4,7 @@
 @extends('layout.footer')
 
 @section('content')
-
+    {!! NoCaptcha::renderJs() !!}
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">Add New Role</h1>
@@ -45,6 +45,13 @@
                                         </div>
                                         @endforeach
                                         @error('permission')
+                                        <div class="alert alert-danger mb-1 mt-1">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                    <hr class="sidebar-divider">
+                                    <div class="mb-3">
+                                        {!! NoCaptcha::display() !!}
+                                        @error('g-recaptcha-response')
                                         <div class="alert alert-danger mb-1 mt-1">{{ $message }}</div>
                                         @enderror
                                     </div>
